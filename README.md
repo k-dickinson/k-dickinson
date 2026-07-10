@@ -20,7 +20,7 @@
 
 ### `Test Results`
 
-> Each result below is backed by real evidence, not vibes. Null hypothesis: *"just another student."* .
+> Each result below is backed by real evidence, not vibes. Null hypothesis: *"just another student."*
 
 | project | verdict | one-line summary |
 |:--|:--:|:--|
