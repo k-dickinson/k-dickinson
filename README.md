@@ -32,7 +32,7 @@ I build statistical infrastructure for **trustworthy AI evals** — the boring, 
 ML / NLP / evals   ███████████████████░   Transformers · LLMs · BiLSTM-CRF · RL · significance testing
 Python & stack     ██████████████████░░   Python · PyTorch · Hugging Face · SciPy · statsmodels · NumPy
 Infra & MLOps      ████████████████░░░░   AWS (SageMaker · S3) · Docker · Redis · PostgreSQL · GitHub Actions
-Math foundation    ███████████████████░   Probability · Statistics · Linear Algebra · Stochastic Processes
+Math foundation    ███████████████████░   Probability Theory · Statistics · Linear Algebra · Discrete Math
 ```
 
 Currently at **Starburst AI Labs (SAIL)** — architecting a joint tagging + relation-extraction model (BiLSTM encoder · CRF decoder · biaffine relation head) to flag the tokens that actually drive NL-to-SQL generation.
