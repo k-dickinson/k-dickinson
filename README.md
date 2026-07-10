@@ -22,12 +22,12 @@
 
 > Each result below is backed by real evidence, not vibes. Null hypothesis: *"just another student."* .
 
-| check | status | evidence |
+| project | verdict | one-line summary |
 |:--|:--:|:--|
-| **EvalTrust** &nbsp;`flagship` &nbsp;·&nbsp; [repo →](https://github.com/k-dickinson/evaltrust) | **`significant`** | A statistical auditor for model evals — McNemar, paired permutation, equivalence testing (TOST), power analysis & multiple-comparison correction, validated against SciPy/statsmodels. Ships as a **CLI, Python API, and CI/CD GitHub Action** that gates merges on confidence intervals. |
-| **Pokerank** &nbsp;·&nbsp; [pokerank.net →](https://pokerank.net) | **`passed`** | Horizontally-scaled real-time backend (Docker · Redis · PostgreSQL · WebSockets) serving **700+ users**, Elo matchmaking, and a rule-based collusion-detection baseline generating labeled data for future ML detection. |
-| **Pacman-RL** &nbsp;·&nbsp; [repo →](https://github.com/k-dickinson/ai_pacman) | **`passed`** | Q-learning agent → **92% survival** by formulating the game as an MDP with reward shaping; decoupled sim benchmarks A\*, Dijkstra & Greedy BFS at **sub-millisecond** planning latency. |
-| **Crypto Microstructure** &nbsp;·&nbsp; [SSRN →](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6057134) | **`published`** | 3 months of BTC/USDT L2 tick data: signed trade imbalance explains up to **47.1%** of price variance (R²); spreads widen **31%** across volatility tertiles (ANOVA, *p* < 10⁻²⁴). |
+| [**EvalTrust**](https://github.com/k-dickinson/evaltrust) &nbsp;`flagship` | `significant` | Significance testing for AI evals — knows if a model *really* improved or just got lucky |
+| [**Pokerank**](https://pokerank.net) | `passed` | Real-time platform serving **700+ users** (Docker · Redis · Postgres) |
+| [**Pacman-RL**](https://github.com/k-dickinson/ai_pacman) | `passed` | Q-learning agent hitting **92% survival** on a Markov Decision Process |
+| [**Crypto Microstructure**](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6057134) | `published` | Order flow explains **47.1%** of BTC price variance — published on SSRN |
 
 ---
 
