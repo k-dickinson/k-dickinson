@@ -1,3 +1,4 @@
+<!-- profile: evaltrust audit terminal -->
 <div align="center">
 
 <img src="./assets/audit-terminal.svg" alt="evaltrust audit of k-dickinson: reject H0, p < 0.001 — statistically significant" width="720">
