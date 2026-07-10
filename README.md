@@ -22,54 +22,12 @@
 
 > Each result below is backed by real evidence
 
-<table>
-<tr>
-<td width="50%" valign="top">
-
-#### [EvalTrust](https://github.com/k-dickinson/evaltrust) &nbsp;`significant`
-
-Significance testing for AI evals — knows if a model *really* improved or just got lucky.
-
-[![stars](https://img.shields.io/github/stars/k-dickinson/evaltrust?style=flat-square&labelColor=0d1117&color=3fb950)](https://github.com/k-dickinson/evaltrust/stargazers)
-[![forks](https://img.shields.io/github/forks/k-dickinson/evaltrust?style=flat-square&labelColor=0d1117&color=8b949e)](https://github.com/k-dickinson/evaltrust/network/members)
-[![updated](https://img.shields.io/github/last-commit/k-dickinson/evaltrust?style=flat-square&labelColor=0d1117&color=8b949e&label=updated)](https://github.com/k-dickinson/evaltrust/commits)
-
-</td>
-<td width="50%" valign="top">
-
-#### [Pokerank](https://pokerank.net) &nbsp;`live`
-
-Real-time poker platform serving 700+ users — Docker · Redis · Postgres · WebSockets.
-
-[![site](https://img.shields.io/website?url=https%3A%2F%2Fpokerank.net&style=flat-square&labelColor=0d1117&up_color=3fb950&up_message=live&down_message=offline&label=pokerank.net)](https://pokerank.net)
-[![users](https://img.shields.io/badge/users-700%2B-3fb950?style=flat-square&labelColor=0d1117)](https://pokerank.net)
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-#### [Pacman-RL](https://github.com/k-dickinson/ai_pacman) &nbsp;`passed`
-
-Q-learning agent hitting 92% survival on a Markov Decision Process.
-
-[![stars](https://img.shields.io/github/stars/k-dickinson/ai_pacman?style=flat-square&labelColor=0d1117&color=3fb950)](https://github.com/k-dickinson/ai_pacman/stargazers)
-[![forks](https://img.shields.io/github/forks/k-dickinson/ai_pacman?style=flat-square&labelColor=0d1117&color=8b949e)](https://github.com/k-dickinson/ai_pacman/network/members)
-[![updated](https://img.shields.io/github/last-commit/k-dickinson/ai_pacman?style=flat-square&labelColor=0d1117&color=8b949e&label=updated)](https://github.com/k-dickinson/ai_pacman/commits)
-
-</td>
-<td width="50%" valign="top">
-
-#### [Crypto Microstructure](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6057134) &nbsp;`published`
-
-Signed order flow explains 47.1% of BTC price variance — published research.
-
-[![SSRN](https://img.shields.io/badge/SSRN-published-3fb950?style=flat-square&labelColor=0d1117)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6057134)
-[![variance](https://img.shields.io/badge/R%C2%B2%20variance-47.1%25-8b949e?style=flat-square&labelColor=0d1117)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6057134)
-
-</td>
-</tr>
-</table>
+| project | verdict | one-line summary |
+|:--|:--:|:--|
+| [**EvalTrust**](https://github.com/k-dickinson/evaltrust) | `significant` | Significance testing for AI evals — knows if a model *really* improved or just got lucky |
+| [**Pokerank**](https://pokerank.net) | `passed` | Real-time poker platform serving **700+ users** (Docker · Redis · Postgres) |
+| [**Pacman-RL**](https://github.com/k-dickinson/ai_pacman) | `passed` | Q-learning agent hitting **92% survival** on a Markov Decision Process |
+| [**Crypto Microstructure**](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6057134) | `published` | Order flow explains **47.1%** of BTC price variance — published on SSRN |
 
 ---
 
