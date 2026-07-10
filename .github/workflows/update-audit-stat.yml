@@ -1,7 +1,7 @@
 name: update-audit-stat
 
-# Keeps the "n = N PRs" figure in the audit terminal SVG in sync with the
-# owner's total authored pull requests. Runs daily and on manual trigger.
+# Keeps the "n = N commits" figure in the audit terminal SVG in sync with the
+# owner's total authored commits. Runs daily and on manual trigger.
 
 on:
   schedule:
@@ -17,30 +17,30 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch authored PR count
-        # PR_COUNT_TOKEN (a PAT with 'repo' scope) sees private PRs too;
-        # falls back to the built-in token (public PRs only) if unset.
+      - name: Fetch authored commit count
+        # PR_COUNT_TOKEN (a PAT with 'repo' scope) sees private commits too;
+        # falls back to the built-in token (public commits only) if unset.
         env:
           GH_TOKEN: ${{ secrets.PR_COUNT_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
-          count=$(gh api -X GET search/issues \
-            -f q="type:pr author:${{ github.repository_owner }}" \
+          count=$(gh api -X GET search/commits \
+            -f q="author:${{ github.repository_owner }}" \
             --jq '.total_count')
-          echo "authored PRs: $count"
-          echo "PR_COUNT=$count" >> "$GITHUB_ENV"
+          echo "authored commits: $count"
+          echo "COMMIT_COUNT=$count" >> "$GITHUB_ENV"
 
       - name: Update SVG figure
         run: |
-          sed -i -E "s/n = [0-9]+ PRs/n = ${PR_COUNT} PRs/" assets/audit-terminal.svg
+          sed -i -E "s/n = [0-9]+ commits/n = ${COMMIT_COUNT} commits/" assets/audit-terminal.svg
 
       - name: Commit if changed
         run: |
           if git diff --quiet -- assets/audit-terminal.svg; then
-            echo "PR count unchanged — nothing to commit."
+            echo "commit count unchanged — nothing to commit."
             exit 0
           fi
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/audit-terminal.svg
-          git commit -m "chore: refresh audit PR count to ${PR_COUNT} [skip ci]"
+          git commit -m "chore: refresh audit commit count to ${COMMIT_COUNT} [skip ci]"
           git push

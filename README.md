@@ -12,7 +12,7 @@
 
 `▸ curr`&nbsp;&nbsp;**Software Engineer Intern** at **Starburst AI Labs (SAIL)**
 
-<sub>Building models that flag which parts of a question actually drive the SQL it turns into —<br>a joint tagging + relation-extraction architecture (BiLSTM · CRF).</sub>
+<sub>Building a model that predicts which words in a question matter most for generating the correct SQL query —<br>a joint tagging + relation-extraction architecture (BiLSTM · CRF).</sub>
 
 </div>
 
