@@ -43,7 +43,7 @@ Currently at **Starburst AI Labs (SAIL)** — architecting a joint tagging + rel
 
 - **Jane Street Market Making @ CMU** — placed **2nd / 200+**, capturing price dislocations under high volatility
 - **Goldman Sachs × CMU Quantathon** — semi-finalist (HMM Bayesian filtering & parameter estimation)
-- **Quant Club** — VP of Marketing
+- **CMU Quant Club** — VP of Marketing
 
 ---
 
