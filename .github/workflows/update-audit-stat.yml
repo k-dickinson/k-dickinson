@@ -7,7 +7,7 @@ name: update-audit-stat
 
 on:
   schedule:
-    - cron: '17 6 * * *'   # ~06:17 UTC daily
+    - cron: '25 * * * *'   # hourly (~:25 past the hour)
   workflow_dispatch:
 
 permissions:
