@@ -24,7 +24,7 @@
 
 | project | verdict | one-line summary |
 |:--|:--:|:--|
-| [**EvalTrust**](https://github.com/k-dickinson/evaltrust) &nbsp;`flagship` | `significant` | Significance testing for AI evals — knows if a model *really* improved or just got lucky |
+| [**EvalTrust**](https://github.com/k-dickinson/evaltrust) | `significant` | Significance testing for AI evals — knows if a model *really* improved or just got lucky |
 | [**Pokerank**](https://pokerank.net) | `passed` | Real-time poker platform serving **700+ users** (Docker · Redis · Postgres) |
 | [**Pacman-RL**](https://github.com/k-dickinson/ai_pacman) | `passed` | Q-learning agent hitting **92% survival** on a Markov Decision Process |
 | [**Crypto Microstructure**](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6057134) | `published` | Order flow explains **47.1%** of BTC price variance — published on SSRN |
