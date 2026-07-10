@@ -18,8 +18,10 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Fetch authored PR count
+        # PR_COUNT_TOKEN (a PAT with 'repo' scope) sees private PRs too;
+        # falls back to the built-in token (public PRs only) if unset.
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PR_COUNT_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
           count=$(gh api -X GET search/issues \
             -f q="type:pr author:${{ github.repository_owner }}" \
