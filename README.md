@@ -10,7 +10,7 @@
 
 <br>
 
-`▸ now`&nbsp;&nbsp;**Software Engineer Intern** at **Starburst AI Labs (SAIL)**
+`▸ curr`&nbsp;&nbsp;**Software Engineer Intern** at **Starburst AI Labs (SAIL)**
 
 <sub>Building models that flag which parts of a question actually drive the SQL it turns into —<br>a joint tagging + relation-extraction architecture (BiLSTM · CRF).</sub>
 
