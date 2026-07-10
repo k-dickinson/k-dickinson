@@ -1,8 +1,9 @@
 name: update-audit-stat
 
 # Keeps the "n = N commits" figure in the audit terminal SVG in sync with the
-# owner's lifetime commit total — summed year by year from GitHub's contribution
-# data (the same source as the profile graph). Runs daily and on manual trigger.
+# owner's TOTAL commits across every repo they own or contribute to. Runs daily
+# and on manual trigger. Requires the PR_COUNT_TOKEN secret (a PAT with 'repo'
+# scope) to enumerate private/collaborator repositories.
 
 on:
   schedule:
@@ -18,35 +19,29 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Sum lifetime commit contributions
-        # PR_COUNT_TOKEN just raises the API rate limit; the numbers come from the
-        # public contribution graph (user has no restricted/private contributions).
+      - name: Count total commits
         env:
-          GH_TOKEN: ${{ secrets.PR_COUNT_TOKEN || secrets.GITHUB_TOKEN }}
-          LOGIN: ${{ github.repository_owner }}
+          GH_TOKEN: ${{ secrets.PR_COUNT_TOKEN }}
         run: |
-          created=$(gh api graphql -f query='query($l:String!){user(login:$l){createdAt}}' -f l="$LOGIN" --jq '.data.user.createdAt')
-          start=${created:0:4}
-          end=$(date -u +%Y)
-          total=0
-          for y in $(seq "$start" "$end"); do
-            from="${y}-01-01T00:00:00Z"
-            if [ "$y" = "$end" ]; then to="$(date -u +%Y-%m-%dT%H:%M:%SZ)"; else to="${y}-12-31T23:59:59Z"; fi
-            c=$(gh api graphql \
-                 -f query='query($l:String!,$f:DateTime!,$t:DateTime!){user(login:$l){contributionsCollection(from:$f,to:$t){totalCommitContributions}}}' \
-                 -f l="$LOGIN" -f f="$from" -f t="$to" \
-                 --jq '.data.user.contributionsCollection.totalCommitContributions')
-            echo "  $y: $c"
-            total=$((total + c))
-          done
-          echo "lifetime commits: $total"
+          if [ -z "$GH_TOKEN" ]; then
+            echo "PR_COUNT_TOKEN not set — need it to enumerate repos. Skipping."
+            echo "SKIP=1" >> "$GITHUB_ENV"; exit 0
+          fi
+          total=$(bash scripts/count-commits.sh "${{ github.repository_owner }}")
+          echo "total commits: $total"
+          if [ "${total:-0}" -le 0 ]; then
+            echo "Got 0 — likely a token/API issue. Skipping to avoid a bad write."
+            echo "SKIP=1" >> "$GITHUB_ENV"; exit 0
+          fi
           echo "COMMIT_COUNT=$total" >> "$GITHUB_ENV"
 
       - name: Update SVG figure
+        if: env.SKIP != '1'
         run: |
           sed -i -E "s/n = [0-9]+ commits/n = ${COMMIT_COUNT} commits/" assets/audit-terminal.svg
 
       - name: Commit if changed
+        if: env.SKIP != '1'
         run: |
           if git diff --quiet -- assets/audit-terminal.svg; then
             echo "commit count unchanged — nothing to commit."
@@ -55,5 +50,5 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/audit-terminal.svg
-          git commit -m "chore: refresh audit commit count to ${COMMIT_COUNT} [skip ci]"
+          git commit -m "chore: refresh total commit count to ${COMMIT_COUNT} [skip ci]"
           git push
