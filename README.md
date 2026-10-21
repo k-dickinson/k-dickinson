@@ -10,9 +10,12 @@
 
 <br>
 
-`▸ curr`&nbsp;&nbsp;**Software Engineer Intern** at **Starburst AI Labs (SAIL)**
+`▸ curr`&nbsp;&nbsp;**Research Assistant @ University of Pittsburgh's Clinical Natural Language Processing and Artificial Intelligence Innovation Laboratory**
 
-<sub>Building a model that predicts which words in a question matter most for generating the correct SQL query —<br>a joint tagging + relation-extraction architecture (BiLSTM · CRF).</sub>
+<sub>Implemented multi-agent clinical architectures to parse oncology decision trees, integrating published agent
+modules to optimize treatment pathway matching for bone sarcoma guidelines</sub>
+
+`▸ prev`&nbsp;&nbsp;**Software Engineer Intern** at **Starburst AI Labs (SAIL)**
 
 </div>
 
